@@ -5,9 +5,11 @@ db = SQLAlchemy()
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.BigInteger, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     follower_count = db.Column(db.Integer, nullable=False)
+    # tweet ids are ordinal ints so we can fetch more recent tweets
+    # newest_tweet_id = db.Column(db.BigInteger, nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -16,6 +18,7 @@ class User(db.Model):
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Unicode(300))
+    embedding = db.Column(db.PickleType, nullable=False)
     user_id = db.Column(db.BigInteger, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref=('tweet'), lazy=True)
 

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from .db_model import db, User, Tweet
 
 def create_app():
