@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# special exception
+twitoff/twitoff_db.sqlite3
