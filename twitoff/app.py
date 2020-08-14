@@ -2,7 +2,7 @@ from os import getenv
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from .db_model import db, User
-from .twitter import add_user_tweepy
+from .twitter import add_user_tweepy, update_all_users
 from .predict import predict_user
 
 load_dotenv()
