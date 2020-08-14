@@ -130,4 +130,7 @@ dmypy.json
 
 
 # special exception
+twitoff\twitoff_db.sqlite3
 twitoff/twitoff_db.sqlite3
+twitoff_db.sqlite3
+.sqlite3

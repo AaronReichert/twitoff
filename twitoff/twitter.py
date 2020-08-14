@@ -13,6 +13,10 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
 TWITTER = tweepy.API(TWITTER_AUTH) 
 BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
 
+DEFAULT_USERS = [elonmusk,
+                 nasa,
+                 smartereveryday]
+
 def add_user_tweepy(username):
     """Add a user and their tweets to database."""
     try:
@@ -57,3 +61,9 @@ def add_user_tweepy(username):
     else:
         # If no errors happend than commit the records
         db.session.commit()
+        print('successfully saved tweets to DB!')
+
+        def update_all_users():
+            '''Update all tweets for all users'''
+            for user in User.query.all():
+                add_user_tweepy
