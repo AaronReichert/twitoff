@@ -63,7 +63,7 @@ def add_user_tweepy(username):
         db.session.commit()
         print('successfully saved tweets to DB!')
 
-        def update_all_users():
-            '''Update all tweets for all users'''
-            for user in User.query.all():
-                add_user_tweepy(user)
+def update_all_users():
+    '''Update all tweets for all users'''
+    for user in User.query.all():
+        add_user_tweepy(user)
