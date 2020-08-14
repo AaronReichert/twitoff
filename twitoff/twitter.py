@@ -66,4 +66,4 @@ def add_user_tweepy(username):
         def update_all_users():
             '''Update all tweets for all users'''
             for user in User.query.all():
-                add_user_tweepy()
+                add_user_tweepy(user)
