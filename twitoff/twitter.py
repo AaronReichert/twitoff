@@ -13,9 +13,9 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
 TWITTER = tweepy.API(TWITTER_AUTH) 
 BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
 
-DEFAULT_USERS = [elonmusk,
-                 nasa,
-                 smartereveryday]
+DEFAULT_USERS = ['elonmusk',
+                 'nasa',
+                 'smartereveryday']
 
 def add_user_tweepy(username):
     """Add a user and their tweets to database."""
